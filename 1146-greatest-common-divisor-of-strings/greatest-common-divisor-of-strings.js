@@ -13,7 +13,7 @@ var gcdOfStrings = function (str1, str2) {
     } else {
         return "";
     }
-
+    // Function to calculate the greatest common divisor (GCD) of two numbers
     function gcd(a, b) {
         while (b !== 0) {
             const temp = b;
@@ -22,6 +22,7 @@ var gcdOfStrings = function (str1, str2) {
         }
         return a;
     }
+    // Function to check if a string s is a divisor of string t
     function isDivisor(s, t) {
     const repeats = t.length / s.length;
     return s.repeat(repeats) === t;
