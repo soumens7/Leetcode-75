@@ -11,7 +11,8 @@ var kidsWithCandies = function (candies, extraCandies) {
     const result = [];
     // Iterate through the candies array
     for (let i = 0; i < candies.length; i++) {
-        
+        // Check if the current kid, after receiving extra candies,
+        // will have more candies than or equal to the maximum number of candies
         result.push(candies[i] + extraCandies >= maxCandies)
     }
     return result;
