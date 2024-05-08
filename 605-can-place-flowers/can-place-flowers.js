@@ -14,10 +14,6 @@ var canPlaceFlowers = function(flowerbed, n) {
             count++; // Increment the count of planted flowers
         }
     }
-    if(n <= count){
-        return true;
-    }
-    else {
-        return false;
-    }
+   return n <= count;
+       
 };
