@@ -18,7 +18,7 @@ var productExceptSelf = function (nums) {
         suffixProd[i] = suffixProd[i + 1] * nums[i + 1];
     }
 
-    // Calculate answer array
+    // Calculate answer array(Product of predix and suffix elements)
     const answer = [];
     for (let i = 0; i < n; i++) {
         answer[i] = prefixProd[i] * suffixProd[i];
