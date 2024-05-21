@@ -7,6 +7,7 @@ var isSubsequence = function (s, t) {
     let i = 0; // pointer for s
     let j = 0; // pointer for t
     
+    // edge case 
     if (s.length > t.length) {
         return false;
     }
