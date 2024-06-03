@@ -5,7 +5,7 @@
  */
 var longestOnes = function (nums, k) {
     let left = 0; // left pointer to represent window boundaries
-    let right = 0; // right pointer to represent window boundaries
+    let right = 0; // right pointer to represent window boundaries(Itearting through array)
     let zeroCount = 0; // to count zeroes
     let maxLength = 0; // maximum consecutive 1s
 
