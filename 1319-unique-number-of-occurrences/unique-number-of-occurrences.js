@@ -3,20 +3,19 @@
  * @return {boolean}
  */
 var uniqueOccurrences = function(arr) {
-    //count the occurrences of each value
+    // count the occurrence of each value
     const counts = new Map();
-    arr.forEach((item) => {
-        counts.set(item, (counts.get(item) || 0) + 1);
-    });
-    //storing count values in an array
-    const result = Array.from(counts.values());
-    // check for unique values in result array
-    const set = new Set();
-    for (const value of result) {
-        if (set.has(value)) {
-            return false; // Found a duplicate value
+    for(const item of arr){
+        counts.set(item, (counts.get(item) || 0) + 1); // will not include count of duplicate values
+    }
+
+    // Use a set to check for unique counts
+    const uniqueCounts = new Set();
+    for (const count of counts.values()){
+        if(uniqueCounts.has(count)){
+            return false;
         }
-        set.add(value);
+        uniqueCounts.add(count);
     }
     return true;
 };
