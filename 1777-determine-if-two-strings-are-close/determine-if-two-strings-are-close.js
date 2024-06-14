@@ -27,7 +27,7 @@ var closeStrings = function (word1, word2) {
     }
     for(let char of chars1){
         if(!count2.hasOwnProperty(char)){
-            return false; // // Character in word1 not in word2
+            return false; // Character in word1 not in word2
         }
     }
     // Now check if the frequency distribution is the same
