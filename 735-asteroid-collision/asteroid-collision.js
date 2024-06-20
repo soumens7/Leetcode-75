@@ -20,6 +20,7 @@ var asteroidCollision = function (asteroids) {
                 break;
             }
         }
+        // If no collision has stopped it and conditions are met, push the current(positive) asteroid onto the stack
         if (shouldPush) {
             stack.push(asteroid);
         }
