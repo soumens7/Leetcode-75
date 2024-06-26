@@ -8,10 +8,11 @@ var RecentCounter = function () {
  * @return {number}
  */
 RecentCounter.prototype.ping = function (t) {
-    this.requests.push(t);
+    this.requests.push(t); // Add the new ping time to the requests array
 
+    // Loop to remove all pings from the requests array that are outside the 3000 ms window from the current ping time
     while (this.requests[0] < t - 3000) {
-        this.requests.shift();
+        this.requests.shift(); // Remove the oldest ping if it's outside the 3000 ms window
     }
     // The length of the queue now represents the count of requests within the last 3000 ms
     return this.requests.length;
