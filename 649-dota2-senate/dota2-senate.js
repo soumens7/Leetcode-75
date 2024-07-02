@@ -15,7 +15,7 @@ var predictPartyVictory = function (senate) {
     }
     // removing(ban) senator from party according to order
     while (radiant.length > 0 && dire.length > 0) {
-        let Rindex = radiant.shift(), Dindex = dire.shift();
+        let Rindex = radiant.shift(), Dindex = dire.shift();// radiant.shift() = radiant[0], dire.shift() = dire[0]
         // whichever index comes first gets to ban other
         if (Rindex < Dindex) {
             radiant.push(Rindex + senate.length)// Radiant bans a Dire and gets added to the end of the senate list for next round
