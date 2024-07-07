@@ -14,9 +14,9 @@ var oddEvenList = function (head) {
         return head; // If the list is empty or has only one node, return the head.
     }
     let odd = new ListNode(0); //dummy node for odd list
-    let odd_ptr = odd;
+    let odd_ptr = odd; // pointer to point next node in odd list
     let even = new ListNode(0);// dummy node for even list
-    let even_ptr = even;
+    let even_ptr = even; // pointer to point next node in even list
     let idx = 1; // to track odd and even positions
 
     while (head !== null) {
@@ -30,8 +30,8 @@ var oddEvenList = function (head) {
         head = head.next;
         idx++;
     }
-    even_ptr.next = null;
-    odd_ptr.next = even.next;
+    even_ptr.next = null; // terminate the even list
+    odd_ptr.next = even.next;// Concatenate the odd and even lists
 
     return odd.next;
 
