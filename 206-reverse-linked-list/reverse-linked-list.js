@@ -10,7 +10,7 @@
  * @return {ListNode}
  */
 var reverseList = function(head) {
-    let node = null; // return value
+    let node = null; 
 
     while (head) {
         const temp = head.next;// temp used to traverse through linked list
