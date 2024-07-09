@@ -13,7 +13,7 @@ var reverseList = function(head) {
     let node = null; 
 
     while (head) {
-        const temp = head.next;// temp used to traverse through linked list
+        const temp = head.next;// temp used to point through linked list
         head.next = node; // reversing the direction of pointer
         node = head; // moving next(node) pointer to current node(head)
         head = temp; // moving head pointer to next node(temp), advancing linked list
