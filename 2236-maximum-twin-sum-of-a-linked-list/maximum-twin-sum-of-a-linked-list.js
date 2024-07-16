@@ -10,17 +10,31 @@
  * @return {number}
  */
 var pairSum = function(head) {
-    let arr = []; // create array
-    // pushing elements of Linked list in array(arr)
-    while(head){
-        arr.push(head.val);
-        head = head.next;
-    } 
-    let max = 0;
-    let n = arr.length;
-    // finding the max Twin Sum value using Math.max() 
-    for(let i =0; i< n ; i++){
-        max = Math.max(max, (arr[i] + arr[n-1-i]));
+    let slow = head;
+    let fast = head;
+
+    // to get the middle element in Linked list
+    while(fast != null && fast.next != null){
+        fast = fast.next.next;
+        slow = slow.next; // last updated slow wil be middle 
     }
-    return max;
+
+    // Reverse second half of Linked list 
+    let nextNode, prev = null;
+    while(slow != null){
+        nextNode = slow.next;
+        slow.next = prev;
+        prev = slow;
+        slow = nextNode;
+    }
+    // finding max twin sum of Linked List
+    let start = head;
+    let maxSum = 0;
+    while(prev != null){
+        maxSum = Math.max(maxSum, start.val + prev.val);
+        prev = prev.next;
+        start = start.next;
+    }
+
+    return maxSum;
 };
