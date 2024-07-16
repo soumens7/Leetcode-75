@@ -13,10 +13,10 @@ var pairSum = function(head) {
     let slow = head;
     let fast = head;
 
-    // to get the middle element in Linked list
+    // finding the middle element in Linked list
     while(fast != null && fast.next != null){
         fast = fast.next.next;
-        slow = slow.next; // last updated slow wil be middle 
+        slow = slow.next; // last updated slow will be middle 
     }
 
     // Reverse second half of Linked list 
@@ -32,8 +32,8 @@ var pairSum = function(head) {
     let maxSum = 0;
     while(prev != null){
         maxSum = Math.max(maxSum, start.val + prev.val);
-        prev = prev.next;
-        start = start.next;
+        prev = prev.next; // second half of Linked List(new)
+        start = start.next; // first half of Linken List
     }
 
     return maxSum;
