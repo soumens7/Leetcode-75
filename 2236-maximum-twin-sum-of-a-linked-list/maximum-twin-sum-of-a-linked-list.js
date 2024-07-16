@@ -33,7 +33,7 @@ var pairSum = function(head) {
     while(prev != null){
         maxSum = Math.max(maxSum, start.val + prev.val);
         prev = prev.next; // second half of Linked List(new)
-        start = start.next; // first half of Linken List
+        start = start.next; // first half of Linked List
     }
 
     return maxSum;
