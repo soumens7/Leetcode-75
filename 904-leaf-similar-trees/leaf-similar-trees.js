@@ -16,7 +16,7 @@ var leafSimilar = function(root1, root2) {
     if(!root){
         return;
     }
-    if(!root.left && !root.right){// encounters a leaf node (a node with no left or right child) 
+    if(!root.left && !root.right){// encounters a leaf node (a node with no left and right child) 
         leafVals.push(root.val); // it adds the node's value to leafVals.
     }
     leaf_Values(root.left, leafVals);
