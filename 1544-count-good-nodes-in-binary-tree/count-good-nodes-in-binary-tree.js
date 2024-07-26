@@ -16,10 +16,13 @@ var goodNodes = function(root) {
             return 0;
         }
         let res = 0;
+        // if current node value greater than maxVal
         if(node.val >= maxVal){
             res = 1;
         }else { res = 0;}
+        // updating current max value max(maxVal, current node value)
         maxVal = Math.max(maxVal, node.val);
+        // counting good nodes in left and rigth subtree
         res += dfs(node.left, maxVal);
         res += dfs(node.right, maxVal);
         return res;
