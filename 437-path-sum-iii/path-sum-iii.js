@@ -21,10 +21,11 @@ var pathSum = function (root, targetSum) {
         pathSum += root.val; // current path sum
 
         // Case 1: starts from root node
-        if (pathSum === targetSum) {output++;}
+        if (pathSum === targetSum) { output++; }
 
         // Case 2: starts from middle of tree
         // frequency of targetSum in the current path (up to current node)
+        // check if there's a subpath that sums to targetSum
         if (map[pathSum - targetSum]) {
             output += map[pathSum - targetSum];
         }
@@ -33,12 +34,14 @@ var pathSum = function (root, targetSum) {
             map[pathSum]++;
         }
         else map[pathSum] = 1;
-
+        // Traverse the left subtree
         if (root.left) { traverse(root.left, pathSum); }
+        // Traverse the right subtree
         if (root.right) { traverse(root.right, pathSum); }
 
         // remove the current path sum
         // to note that path is not available/visited
+        // Backtrack: Remove the current path sum from the map
         map[pathSum]--;
     };
 
