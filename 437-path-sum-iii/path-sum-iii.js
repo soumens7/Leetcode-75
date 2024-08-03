@@ -12,8 +12,8 @@
  * @return {number}
  */
 var pathSum = function (root, targetSum) {
-    let output = 0;
-    let map = {};
+    let output = 0;// Variable to store the number of valid paths
+    let map = {};// Hash map to store the frequency of prefix sums
 
     const traverse = (root, pathSum) => {
         if (!root) return null;
