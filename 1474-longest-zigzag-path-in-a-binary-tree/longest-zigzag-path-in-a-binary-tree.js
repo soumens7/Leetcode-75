@@ -15,10 +15,11 @@ var longestZigZag = function(root) {
     // recursive function that performs DFS reversal of tree
     function dfs(tree,isLeft,count) { // tree: current node visited, 
                                     //   isLeft: boolean flag indicating the direction of the last move (true if the last move was to the left, false if it was to the right).
+                                    //  count: The current length of the ZigZag path.
         if(!tree) return;
         maxLength = Math.max(maxLength, count);
 
-        if(isLeft) {
+        if(isLeft) { //  isLeft: boolean flag indicating the direction of the last move
             dfs(tree.left, false, count+1);
             dfs(tree.right, true, 1);
         } else {
