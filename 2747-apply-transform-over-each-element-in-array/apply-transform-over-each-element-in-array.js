@@ -9,4 +9,5 @@ var map = function(arr, fn) {
         mappedArr.push(fn(arr[i], i));
     }
     return mappedArr;
+    // return arr.map(fn);
 };
