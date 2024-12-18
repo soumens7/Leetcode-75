@@ -21,8 +21,8 @@ var lowestCommonAncestor = function(root, p, q) {
     const rightSubtree = lowestCommonAncestor(root.right, p, q);
 
     // if both left and right are not null, this is the LCA
-    if(leftSubtree && rightSubtree){
-        return root;
+    if(leftSubtree !== null && rightSubtree !== null){
+        return root;// this is LCA
     }
 
     // Otherwise return left or right
