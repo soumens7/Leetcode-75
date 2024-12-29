@@ -11,7 +11,7 @@
  * @return {number}
  */
 var maxLevelSum = function (root) {
-    if (!root) return [];
+    if (!root) return 0; // return if tree is empty
 
     const queue = [root];// initialize que with root node
     let maxSum = -Infinity;
@@ -27,16 +27,18 @@ var maxLevelSum = function (root) {
             const node = queue.shift(); // Dequeue node
             levelSum += node.val; // Adding the current node val to levelSum
 
-            // Enqueue left and right children in queue
+            // Add(Enqueue) left and right children in queue
             if (node.left) queue.push(node.left);
             if (node.right) queue.push(node.right);
         }
-        currentLevel++;
+        currentLevel++; // Move to next level 
+
+        // Update maxSum and maxLevel if this level has a higher sum.  
         if (levelSum > maxSum) {
             maxSum = levelSum;
             maxLevel = currentLevel;
         }
-        
+
     }
     return maxLevel;
 };
