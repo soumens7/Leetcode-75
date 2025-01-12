@@ -2,20 +2,18 @@
  * @param {number[][]} rooms
  * @return {boolean}
  */
-var canVisitAllRooms = function(rooms) {
-    const visited = new Set(); // to track rooms visited
+var canVisitAllRooms = function (rooms) {
+    const visited = new Set(); // Set to keep a track of rooms visited
 
     function dfs(room) {
-        if(visited.has(room)) return; // skip if already visited
-        visited.add(room); // Mark the room as visited
+        if (visited.has(room)) return; // skip if already visited
+        visited.add(room);           // Mark room as visited (adding in visited)
 
-        for(const key of rooms[room]){
-            dfs(key); // recursively visit other room
+        for (const key of rooms[room]) {
+            dfs(key);   // recursively visit other rooms
         }
     }
-    dfs(0); // start DFS with room 0
+    dfs(0); // start dfs with room 0
 
-    // check if all room is visited
-    return visited.size === rooms.length;
-
+    return visited.size === rooms.length; // check if all rooms visited
 };
