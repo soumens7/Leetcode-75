@@ -16,7 +16,7 @@ var minReorder = function(n, connections) {
         graph[b].push([a, 0]); // Incoming edge to b from a
     }
 
-    // DFS function
+    // DFS function (DFS performed on graph(adjacency list) to find changes)
     const dfs = (city) => {
         visited[city] = true; // Mark the city as visited
         for (const [neighbor, isOutgoing] of graph[city]) {
