@@ -22,7 +22,7 @@ var minReorder = function(n, connections) {
         for (const [neighbor, isOutgoing] of graph[city]) {
             if (!visited[neighbor]) {
                 changes += isOutgoing; // Increment if the edge is outgoing
-                dfs(neighbor);
+                dfs(neighbor); // Recursively performs DFS for the unvisited neighbor city.
             }
         }
     };
