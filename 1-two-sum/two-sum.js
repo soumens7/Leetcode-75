@@ -5,14 +5,15 @@
  */
 // indices = position in array
 var twoSum = function (nums, target) {
-    let n = nums.length;
+    const map = new Map();// create a hash map ({number: index}) to store seen numbers 
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i]; // Calculate the complement
 
-    for (let i = 0; i < n; i++) {
-        for (let j = i + 1; j < n; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i, j];
-            }
-        }
+        if(map.has(complement)){ // if complement exists in map
+            return [map.get(complement), i]; // return indices
+        } 
+
+        map.set(nums[i], i); // Store number and its index
     }
-    return null; // Return an empty array if no solution is found
+    return []; // Return an empty array if no solution is found
 };
