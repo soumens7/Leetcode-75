@@ -10,7 +10,7 @@ var twoSum = function (nums, target) {
         const complement = target - nums[i]; // Calculate the complement
 
         if(map.has(complement)){ // if complement exists in map
-            return [map.get(complement), i]; // return indices
+            return [map.get(complement), i]; // return indices [previous element index, current index]
         } 
 
         map.set(nums[i], i); // Store number and its index
