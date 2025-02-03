@@ -25,7 +25,7 @@ var calcEquation = function (equations, values, queries) {
     }
 
     // DFS function to find path from start to target
-    const dfs = (start, target, visited) => {
+    const dfs = (start, target, visited) => { // Ex- dfs =("a", "b", new Set())
         if (!graph.has(start) || !graph.has(target)) return -1.0;
         if (start === target) return 1.0; // A/A = 1.0
 
