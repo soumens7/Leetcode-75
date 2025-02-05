@@ -18,7 +18,7 @@ var merge = function(intervals) {
             last[1] = Math.max(current[1], last[1]); // modified merged [0] [1] through reference
         }
         else {
-            // adding no-overlapping interval
+            // adding non-overlapping interval
             merged.push(current);
         }
     }
