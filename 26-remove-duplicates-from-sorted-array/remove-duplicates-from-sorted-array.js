@@ -7,9 +7,9 @@ var removeDuplicates = function(nums) {
     if (nums.length === 0) {
         return 0;
     }
-    // fast pointer to keep count for unique elements
+    // k is the pointer for the next unique element's position.
     let k = 1;
-    // slow pointer to interate through entire array 
+    // i is the pointer that iterates through the array from the second element
     for(let i =1; i < nums.length; i++){
         if(nums[i] !== nums[k-1]){ //check for duplicates
             nums[k] = nums[i];
