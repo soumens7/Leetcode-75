@@ -9,7 +9,7 @@ var rotate = function(nums, k) {
         return;
     }
 
-    k = k % n;
+    k = k % n;// Handle k larger than n
 
     if(k === 0){
         return;
