@@ -2,8 +2,8 @@
  * @param {number[]} prices
  * @return {number}
  */
-var maxProfit = function(prices) {
-    if(prices.length < 2){
+var maxProfit = function (prices) {
+    if (prices.length < 2) {
         return 0;
     }
 
@@ -11,19 +11,19 @@ var maxProfit = function(prices) {
 
     let maxProfit = 0;
 
-    for(let i =0; i< prices.length; i++){
+    for (let i = 0; i < prices.length; i++) {
         const currentPrice = prices[i];
 
-        if(currentPrice < minPrice){
+        if (currentPrice < minPrice) {
             minPrice = currentPrice;
         }
-        else{
+        else {
             // if currentPrice not lower than minPrice this means we can potentially 
             // sell at currentPrice for profit
-            const potentialProfit = currentPrice - minPrice; 
+            const potentialProfit = currentPrice - minPrice;
             // check if potentialProfit is greater than maxProfit found so far, 
             // and update maxProfit accordingly
-            if(potentialProfit > maxProfit){
+            if (potentialProfit > maxProfit) {
                 maxProfit = potentialProfit;
             }
         }
