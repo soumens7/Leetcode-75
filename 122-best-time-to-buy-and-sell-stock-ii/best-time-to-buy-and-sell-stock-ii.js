@@ -7,7 +7,7 @@ var maxProfit = function (prices) {
     let start = prices[0];
 
     for (let i = 1; i < prices.length; i++) {
-        // if day 1 price less than prices[i], it will keep adding up in max 
+        // if start price less than prices[i], it will keep adding up in max 
         if (start < prices[i]) {
             max += prices[i] - start;
         }
