@@ -6,7 +6,7 @@ var canJump = function (nums) {
 
     let goal = nums.length - 1;// Initialize 'goal' to the last index of the array
     // Iterate backwards from the second-to-last element down to the first element (index 0)
-    for (let i = nums.length - 1; i >= 0; i--) {
+    for (let i = nums.length - 2; i >= 0; i--) {
         // Check if from the current position 'i', we can reach the current 'goal'
         // 'i + nums[i]' represents the furthest index reachable from 'i'
         if (i + nums[i] >= goal) {
