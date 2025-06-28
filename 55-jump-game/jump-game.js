@@ -10,8 +10,6 @@ var canJump = function (nums) {
         // Check if from the current position 'i', we can reach the current 'goal'
         // 'i + nums[i]' represents the furthest index reachable from 'i'
         if (i + nums[i] >= goal) {
-            // If we can reach the 'goal' from 'i', it means 'i' now becomes
-            // a new, closer "goal" that we need to reach.
             // We want to find the leftmost possible index from which we can reach the ultimate goal.
             goal = i;
         }
