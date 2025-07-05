@@ -24,7 +24,7 @@ RandomizedSet.prototype.remove = function (val) {
     let idToRemove = this.map.get(val);
     let lastElement = this.arr[this.arr.length - 1];
 
-    // Move last element to index to delete to perform pop() and delete(val)
+    // Move last element to index to delete and perform pop() and delete(val)
     this.arr[idToRemove] = lastElement;
     this.map.set(lastElement, idToRemove);
 
