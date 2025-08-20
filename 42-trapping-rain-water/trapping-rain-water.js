@@ -11,9 +11,9 @@ var trap = function (height) {
 
     while (left < right) {
         if (leftMax < rightMax) {
-            left++
             leftMax = Math.max(leftMax, height[left]);
             water += leftMax - height[left];
+            left++
         } else {
             right--;
             rightMax = Math.max(rightMax, height[right]);
