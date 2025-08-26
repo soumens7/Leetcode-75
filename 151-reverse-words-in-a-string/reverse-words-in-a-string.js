@@ -3,12 +3,10 @@
  * @return {string}
  */
 var reverseWords = function(s) {
-    // split string into array of words
-    const words = s.trim().split(/\s+/);
+    if(!s.length) return "";
 
-    // reverse the array of words
-    const reverseWords = words.reverse();
+    let words = s.trim().split(/\s+/); // trim string and split into words 
+    words.reverse(); // reverse the words
 
-    // join the words back into string with single space in between
-    return reverseWords.join(' ');
+    return words.join(' ');// join the words with single space
 };
