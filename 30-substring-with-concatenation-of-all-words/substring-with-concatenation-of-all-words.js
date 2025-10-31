@@ -4,7 +4,6 @@
  * @return {number[]}
  */
 var findSubstring = function (s, words) {
-    let totalCharCount = 0;
     let map = new Map();
 
     let wordLength = words[0].length; // length of each word in words
@@ -24,7 +23,7 @@ var findSubstring = function (s, words) {
         let visited = new Map();
 
         for (let i = 0; i < tempStr.length; i += wordLength) {
-            let word = tempStr.substr(i, wordLength);
+            let word = tempStr.substring(i, i + wordLength);
 
             visited.has(word) ? visited.set(word, visited.get(word) + 1) : visited.set(word, 1)
         }
