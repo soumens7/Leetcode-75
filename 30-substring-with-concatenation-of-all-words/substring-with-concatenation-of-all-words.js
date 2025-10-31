@@ -23,11 +23,12 @@ var findSubstring = function (s, words) {
         let visited = new Map();
 
         for (let i = 0; i < tempStr.length; i += wordLength) {
+            //extracts a single word from a larger string (tempStr)
             let word = tempStr.substring(i, i + wordLength);
-
+            //Populating the Map/Counting/Incrementing Frequency
             visited.has(word) ? visited.set(word, visited.get(word) + 1) : visited.set(word, 1)
         }
-        // comparing map and visited 
+        // comparing two Maps, 'map' and 'visited' 
         for (let [key, val] of visited) {
             if (map.get(key) != val) return false;
         }
