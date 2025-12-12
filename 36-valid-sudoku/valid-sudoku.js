@@ -12,10 +12,9 @@ var isValidSudoku = function (board) {
             if (board[r][c] === '.') {
                 continue;
             }
-
             let value = board[r][c];
             let boxIndex = Math.floor(r / 3) * 3 + Math.floor(c / 3);
-
+            // check for same value in row, col and box 
             if (rows[r].has(value) || cols[c].has(value) || boxes[boxIndex].has(value)) {
                 return false;
             }
