@@ -3,29 +3,18 @@
  * @param {number} target
  * @return {number[]}
  */
-// indices = position in array
 var twoSum = function (nums, target) {
-    // naive approach
-    // let n = nums.length;
+    const Nmap = new Map();
 
-    // for (let i = 0; i < n; i++) {
-    //     for (let j = i + 1; j < n; j++) {
-    //         if (nums[i] + nums[j] === target) {
-    //             return [i, j];
-    //         }
-    //     }
-    // }
-    // return null;
-
-    const map = new Map();// create a hash map ({number: index}) to store seen numbers 
     for (let i = 0; i < nums.length; i++) {
-        const complement = target - nums[i]; // Calculate the complement
-
-        if(map.has(complement)){ // if complement exists in map
-            return [map.get(complement), i]; // return indices [previous element index, current index]
-        } 
-
-        map.set(nums[i], i); // Store number and its index
+        // calculate complement
+        const comp = target - nums[i];
+        // check for complement
+        if (Nmap.has(comp)) {
+            // if exist, return value associated with complement's key as index, index of current number      
+            return [Nmap.get(comp), i];
+        }
+        // if does not exist, add current number and its index
+        Nmap.set(nums[i], i);
     }
-    return []; // Return an empty array if no solution is found
 };
